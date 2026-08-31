@@ -1096,6 +1096,19 @@ main { padding-top: var(--nav-h); }
   color: var(--accent);
   border-bottom: 1px solid var(--line);
 }
+.map-embed {
+  margin-top: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 16 / 8;
+}
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
 
 /* Mobile adjustments for v5 additions */
 @media (max-width: 980px) {
