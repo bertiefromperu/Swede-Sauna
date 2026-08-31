@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Shop — Swede Sauna{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Shop</span>
+    <h1 class="display-lg">Natural goods.</h1>
+    <p class="page-hero__sub">A small, considered range. Enquire directly with Sara — payment in cash or Revolut.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="wrap">
+    <div class="products">
+      {% for p in products %}
+      <div class="product reveal {% if p.soon is defined and p.soon %}product--soon{% endif %}">
+        <div class="product__media img-ph" data-label="{{ p.name }}: {{ p.cat }}">
+          <span class="product__cat">{{ p.cat }}</span>
+          {% if p.deal is defined and p.deal %}<span class="product__flag">Deal</span>{% endif %}
+          {% if p.soon is defined and p.soon %}<span class="product__flag product__flag--muted">Coming soon</span>{% endif %}
+        </div>
+        <div class="product__info">
+          <div class="product__header">
+            <h3>{{ p.name }}</h3>
+            <span class="product__price">{% if p.price %}€{{ p.price }}{% else %}—{% endif %}</span>
+          </div>
+          <p>{{ p.desc }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="info-strip">
+  <div class="wrap wrap--narrow">
+    <p>Products available at the sauna or by request. Payment via Revolut <a href="{{ revolut }}" target="_blank" rel="noopener">@saraufd3v</a> or cash. Follow us on Instagram for new drops.</p>
+  </div>
+</section>
+
+{% endblock %}

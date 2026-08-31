@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}About — Swede Sauna{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">The story</span>
+    <h1 class="display-lg">About Sara &amp;<br>Swede Sauna.</h1>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="panel">
+  <div class="wrap">
+    <div class="story">
+      <div class="story__media">
+        {% if has_image('images/Sara.jpeg') %}
+        <img src="{{ url_for('static', filename='images/Sara.jpeg') }}" alt="Sara, founder of Swede Sauna">
+        {% else %}
+        <div class="img-ph img-ph--portrait" data-label="Sara's portrait — coming soon"></div>
+        {% endif %}
+      </div>
+      <div class="story__text">
+        <span class="eyebrow">Sara's story</span>
+        <h2 class="display">Why a sauna on a beach.</h2>
+        <div class="prose">
+          <p><em>Sara's introduction is coming — she'll share the story behind Swede Sauna, her love of Robert's Cove, and her philosophy around heat therapy and wellbeing.</em></p>
+          <p>In the meantime: Swede Sauna is a genuinely one-of-a-kind experience in Ireland. A hand-crafted wood-fired barrel sauna at the waterline of one of West Cork's most beautiful hidden beaches. Sara runs every session herself.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE MENTION -->
+<section class="panel panel--dark">
+  <div class="wrap wrap--narrow">
+    <div class="section-head section-head--sm section-head--light">
+      <span class="eyebrow eyebrow--light">Corporate partnerships</span>
+      <h2 class="display">Wellness packages for teams.</h2>
+    </div>
+    <p class="corporate-body">
+      Swede Sauna partners with multinationals — including Dell — offering bulk session packages for employee wellbeing programmes and team days. Pricing is flexible and tracked digitally, making it simple to roll out across teams.
+    </p>
+    <p class="corporate-body">
+      For corporate enquiries, reach out to Sara directly via Instagram.
+    </p>
+  </div>
+</section>
+
+<!-- FIND US -->
+<section class="panel">
+  <div class="wrap wrap--narrow">
+    <div class="section-head section-head--sm">
+      <span class="eyebrow">Find us</span>
+      <h2 class="display">Robert's Cove.</h2>
+    </div>
+    <div class="find-grid">
+      <div class="find-card">
+        <span class="find-card__num">01</span>
+        <strong>Address</strong>
+        <p>Robert's Cove Beach<br>Minane Bridge<br>Co. Cork</p>
+      </div>
+      <div class="find-card">
+        <span class="find-card__num">02</span>
+        <strong>Getting here</strong>
+        <p>Approx. 25 minutes south of Cork City. Free parking at the beach car park.</p>
+      </div>
+      <div class="find-card">
+        <span class="find-card__num">03</span>
+        <strong>Booking</strong>
+        <p>All sessions booked via <a href="{{ bookwhen }}" target="_blank" rel="noopener">Bookwhen</a>. Payment in cash or Revolut on the day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

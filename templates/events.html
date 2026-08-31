@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Events — Swede Sauna{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">What's on</span>
+    <h1 class="display-lg">Events at the cove.</h1>
+    <p class="page-hero__sub">A rotating programme of yoga, wellness, and community gatherings at Robert's Cove.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="wrap wrap--narrow">
+    <div class="events">
+      {% for ev in events %}
+      <div class="event reveal">
+        <div class="event__media img-ph" data-label="{{ ev.title }}"></div>
+        <div class="event__info">
+          <div class="event__tag-row">
+            <span class="event__tag">{{ ev.tag }}</span>
+            <span class="event__when">{{ ev.when }}</span>
+          </div>
+          <h3 class="display-sm">{{ ev.title }}</h3>
+          <p>{{ ev.desc }}</p>
+          <a href="{{ bookwhen }}" target="_blank" rel="noopener" class="arrow-link">Book around this on Bookwhen<span>→</span></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="collab">
+      <div>
+        <h3 class="display-sm">Want to collaborate?</h3>
+        <p>Sara welcomes yoga instructors, wellness coaches and practitioners to co-host events at the cove. Reach out via Instagram.</p>
+      </div>
+      <a href="#" class="btn btn--primary">Message on Instagram</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

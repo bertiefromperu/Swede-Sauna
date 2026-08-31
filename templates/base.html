@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% block meta %}Swede Sauna — Wood-fired barrel sauna at Robert's Cove, West Cork.{% endblock %}">
+  <title>{% block title %}Swede Sauna{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="/" class="nav__logo">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+      <circle cx="11" cy="11" r="10" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M6 13 Q11 7 16 13" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <path d="M8 8 Q10 5 12 8" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
+    </svg>
+    <span>Swede Sauna</span>
+  </a>
+  <nav class="nav__menu" id="navMenu">
+    {% for item in nav %}
+    <a href="{{ item.url }}" class="nav__item {% if active == item.url %}is-active{% endif %}">{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+  <div class="nav__right">
+    <a href="{{ bookwhen }}" target="_blank" rel="noopener" class="nav__book">Book Session</a>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>{% block content %}{% endblock %}</main>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__col footer__col--brand">
+      <div class="footer__logo">
+        <svg width="28" height="28" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="10" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M6 13 Q11 7 16 13" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <path d="M8 8 Q10 5 12 8" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
+        </svg>
+        <span>Swede Sauna</span>
+      </div>
+      <p>Wood-fired barrel sauna at the edge of the Atlantic.</p>
+      <p class="footer__address">Robert's Cove · Minane Bridge<br>Co. Cork, Ireland</p>
+    </div>
+    <div class="footer__col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        {% for item in nav %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Booking</h4>
+      <ul>
+        <li><a href="{{ bookwhen }}" target="_blank" rel="noopener">Bookwhen Calendar</a></li>
+        <li><a href="{{ revolut }}" target="_blank" rel="noopener">Revolut @saraufd3v</a></li>
+        <li>Cash &amp; Revolut only</li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__base">
+    <span>© {{ year }} Swede Sauna</span>
+    <span>West Cork, Ireland</span>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% block js %}{% endblock %}
+</body>
+</html>
