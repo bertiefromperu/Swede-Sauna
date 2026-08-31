@@ -29,10 +29,8 @@ SESSIONS = [
 BRING_ITEMS = [
     {"num": "01", "icon": "swimwear", "label": "Swimwear",   "desc": "You'll go straight from the sauna to the sea."},
     {"num": "02", "icon": "towel",    "label": "Two towels", "desc": "One to sit on inside. One to dry off after."},
-    {"num": "03", "icon": "sandals",  "label": "Flip flops", "desc": "For the short walk between sauna and water."},
     {"num": "04", "icon": "water",    "label": "Water",      "desc": "Stay hydrated before, during, and after."},
-    {"num": "05", "icon": "layer",    "label": "Warm layer", "desc": "Something cosy for the cool-down between rounds."},
-    {"num": "06", "icon": "mug",      "label": "Hot drink",  "desc": "Optional but magical. Tea in a flask is unmatched."},
+    {"num": "05", "icon": "layer",    "label": "Warm layer", "desc": "Something cosy for after your session."},
 ]
 
 BUNDLES = [
